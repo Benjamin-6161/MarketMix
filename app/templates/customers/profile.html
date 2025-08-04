@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="card">
+        <div class="card-header">
+            <h1 class="card-title">Your Profile</h1>
+        </div>
+        <div class="card-content">
+            <p><strong>Username:</strong> {{ current_user.username }}</p>
+            <p><strong>Email:</strong> {{ current_user.email }}</p>
+            <h2>Your Reviews</h2>
+            <ul class="review-list">
+                {% for review in current_user.reviews %}
+                <li class="review">
+                    <p><strong>Vendor:</strong> {{ review.vendor.business_name }}</p>
+                    <p><strong>Rating:</strong> {{ review.rating }}</p>
+                    <p>{{ review.review }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}
