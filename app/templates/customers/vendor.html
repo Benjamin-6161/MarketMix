@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="card">
+        <div class="card-header">
+            <h1 class="card-title">{{ vendor.business_name }}</h1>
+        </div>
+        <div class="card-content">
+            <p>{{ vendor.description }}</p>
+            <p><strong>Category:</strong> {{ vendor.category }}</p>
+            <p><strong>Location:</strong> {{ vendor.location }}</p>
+            <h2>Reviews</h2>
+            <ul class="review-list">
+                {% for review in vendor.reviews %}
+                <li class="review">
+                    <p><strong>Rating:</strong> {{ review.rating }}</p>
+                    <p>{{ review.review }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+            <p><a class="btn btn-primary" href="{{ url_for('main.review_vendor', vendor_id=vendor.id) }}">Leave a review</a></p>
+        </div>
+    </section>
+{% endblock %}
