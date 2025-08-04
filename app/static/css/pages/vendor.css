@@ -1,0 +1,21 @@
+.vendor-profile {
+    padding: 40px 0;
+}
+
+.vendor-profile .profile-header {
+    margin-bottom: 20px;
+}
+
+.vendor-profile .profile-header h1 {
+    font-size: 36px;
+}
+
+.vendor-profile .profile-content {
+    padding: 20px 0;
+}
+
+.vendor-profile .profile-content p {
+    margin-bottom: 10px;
+}
+
+
