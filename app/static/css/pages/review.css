@@ -1,0 +1,27 @@
+.review-form {
+    padding: 40px 0;
+}
+
+.review-form .form-group {
+    margin-bottom: 20px;
+}
+
+.review-list {
+    padding: 40px 0;
+}
+
+.review-list .review {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.review-list .review .review-header {
+    margin-bottom: 10px;
+}
+
+.review-list .review .review-header h2 {
+    font-size: 18px;
+}
+
+
