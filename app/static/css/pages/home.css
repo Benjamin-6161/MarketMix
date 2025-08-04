@@ -1,0 +1,28 @@
+.home-hero {
+    background-image: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.home-hero h1 {
+    font-size: 48px;
+}
+
+.home-features {
+    padding: 40px 0;
+}
+
+.home-features .feature {
+    margin-bottom: 20px;
+}
+
+.home-features .feature h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
