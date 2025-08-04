@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="card">
+        <div class="card-header">
+            <h1 class="card-title">Leave a Review</h1>
+        </div>
+        <div class="card-content">
+            <form method="POST" class="form">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.rating.label(class="form-label") }}
+                    {{ form.rating(class="form-input") }}
+                </div>
+                <div class="form-group">
+                    {{ form.review.label(class="form-label") }}
+                    {{ form.review(class="form-input") }}
+                </div>
+                <div class="form-group">
+                    {{ form.submit(class="btn btn-primary") }}
+                </div>
+            </form>
+            <h2>Existing Reviews</h2>
+            <ul class="review-list">
+                {% for review in reviews %}
+                <li class="review">
+                    <p><strong>Rating:</strong> {{ review.rating }}</p>
+                    <p>{{ review.review }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}
