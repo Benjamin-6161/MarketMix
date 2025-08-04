@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketMix</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <ul>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('main.index') }}">Home</a></li>
+                {% if current_user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('main.profile') }}">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a></li>
+                <div class="card-content">
+                  <ul class="vendor-list">
+                  {% for vendor in vendors %}
+                  <li class="vendor">
+                    <p><a class="vendor-link" href="{{ url_for('main.vendor', vendor_id=vendor.id) }}">{{ vendor.business_name }}</a></p>
+                    <p>{{ vendor.description }}</p>
+                    <p><strong>Category:</strong> {{ vendor.category }}</p>
+                    <p><strong>Location:</strong> {{ vendor.location }}</p>
+                  </li>
+                  {% endfor %}
+                  </ul>
+                </div>
+                {% else %}
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('auth.login') }}">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('auth.register') }}">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="footer">
+        &copy; 2025 MarketMix
+    </footer>
+</body>
+</html>
