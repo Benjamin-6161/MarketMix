@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="card">
+        <div class="card-header">
+            <h1 class="card-title">Vendors</h1>
+        </div>
+        <div class="card-content">
+            <ul class="vendor-list">
+                {% for vendor in vendors %}
+                <li class="vendor">
+                    <p><a class="vendor-link" href="{{ url_for('main.vendor', vendor_id=vendor.id) }}">{{ vendor.business_name }}</a></p>
+                    <p>{{ vendor.description }}</p>
+                    <p><strong>Category:</strong> {{ vendor.category }}</p>
+                    <p><strong>Location:</strong> {{ vendor.location }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endblock %}
